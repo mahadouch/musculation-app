@@ -271,6 +271,25 @@ db.exec(`
     tip_number INTEGER,
     text TEXT
   );
+
+  -- Entrées de tracking (musculation + cyclisme)
+  CREATE TABLE tracking_entries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT NOT NULL CHECK(type IN ('musculation', 'cyclisme')),
+    date TEXT NOT NULL,
+    day INTEGER,
+    weight TEXT,
+    mood TEXT,
+    energy TEXT,
+    notes TEXT,
+    exercises_json TEXT,
+    duration INTEGER,
+    distance REAL,
+    intensity TEXT,
+    meteo TEXT,
+    bpm INTEGER,
+    created_at TEXT DEFAULT (datetime('now'))
+  );
 `);
 
 console.log('✅ Schéma créé');
