@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-
-const STORAGE_KEY = 'musculation_journal';
+import { fetchTrackingEntries, createTrackingEntry, deleteTrackingEntry } from '../api';
 
 const defaultExercises = {
   1: [
@@ -43,18 +42,6 @@ const weatherOptions = [
   { label: '💨 Vent', value: 'Vent' },
 ];
 
-function loadEntries() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  } catch {
-    return [];
-  }
-}
-
-function saveEntries(entries) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
-}
-
 export default function Tracking({ data }) {
   const [entries, setEntries] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -76,8 +63,17 @@ export default function Tracking({ data }) {
     bpm: '',
   });
 
+  const loadEntries = async () => {
+    try {
+      const data = await fetchTrackingEntries();
+      setEntries(data);
+    } catch (err) {
+      console.error('Erreur chargement entrées:', err);
+    }
+  };
+
   useEffect(() => {
-    setEntries(loadEntries());
+    loadEntries();
   }, []);
 
   const initExercises = (day) => {
@@ -124,30 +120,36 @@ export default function Tracking({ data }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.weight) {
       alert('Entre ton poids du jour');
       return;
     }
-    const entry = {
-      id: Date.now(),
-      type: sessionType,
-      ...form,
-      timestamp: new Date().toISOString(),
-    };
-    const newEntries = [entry, ...entries];
-    setEntries(newEntries);
-    saveEntries(newEntries);
-    setShowForm(false);
-    resetForm();
+    try {
+      const entry = {
+        type: sessionType,
+        ...form,
+      };
+      await createTrackingEntry(entry);
+      await loadEntries();
+      setShowForm(false);
+      resetForm();
+    } catch (err) {
+      console.error('Erreur création entrée:', err);
+      alert("Erreur lors de l'enregistrement de l'entrée.");
+    }
   };
 
-  const deleteEntry = (id) => {
+  const deleteEntry = async (id) => {
     if (confirm('Supprimer cette entrée ?')) {
-      const newEntries = entries.filter(e => e.id !== id);
-      setEntries(newEntries);
-      saveEntries(newEntries);
+      try {
+        await deleteTrackingEntry(id);
+        await loadEntries();
+      } catch (err) {
+        console.error('Erreur suppression entrée:', err);
+        alert('Erreur lors de la suppression.');
+      }
     }
   };
 

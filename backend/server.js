@@ -13,6 +13,29 @@ app.use(express.json());
 const db = new Database(path.join(__dirname, '..', 'musculation.db'));
 db.pragma('journal_mode = WAL');
 
+// Créer les tables de tracking si elles n'existent pas
+db.exec(`
+  CREATE TABLE IF NOT EXISTS tracking_entries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT NOT NULL CHECK(type IN ('musculation', 'cyclisme')),
+    date TEXT NOT NULL,
+    day INTEGER,
+    weight TEXT,
+    mood TEXT,
+    energy TEXT,
+    notes TEXT,
+    -- musculation fields
+    exercises_json TEXT,
+    -- cycling fields
+    duration INTEGER,
+    distance REAL,
+    intensity TEXT,
+    meteo TEXT,
+    bpm INTEGER,
+    created_at TEXT DEFAULT (datetime('now'))
+  );
+`);
+
 // ============================================================
 // API : Programme complet (remplace l'ancien parsing du markdown)
 // ============================================================
@@ -260,6 +283,69 @@ function getTracking() {
     tips: tips.map(t => t.text),
   };
 }
+
+// ============================================================
+// API : Tracking entries (CRUD)
+// ============================================================
+
+// GET /api/tracking/entries — lister toutes les entrées
+app.get('/api/tracking/entries', (req, res) => {
+  try {
+    const rows = db.prepare('SELECT * FROM tracking_entries ORDER BY date DESC, id DESC').all();
+    const entries = rows.map(r => ({
+      id: r.id,
+      type: r.type,
+      date: r.date,
+      day: r.day,
+      weight: r.weight,
+      mood: r.mood,
+      energy: r.energy,
+      notes: r.notes,
+      exercises: r.exercises_json ? JSON.parse(r.exercises_json) : [],
+      duration: r.duration,
+      distance: r.distance,
+      intensity: r.intensity,
+      meteo: r.meteo,
+      bpm: r.bpm,
+    }));
+    res.json(entries);
+  } catch (err) {
+    console.error('Erreur GET tracking:', err.message);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+});
+
+// POST /api/tracking/entries — créer une entrée
+app.post('/api/tracking/entries', (req, res) => {
+  try {
+    const { type, date, day, weight, mood, energy, notes, exercises, duration, distance, intensity, meteo, bpm } = req.body;
+    const stmt = db.prepare(`
+      INSERT INTO tracking_entries (type, date, day, weight, mood, energy, notes, exercises_json, duration, distance, intensity, meteo, bpm)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+    const result = stmt.run(
+      type, date, day || null, weight || null, mood || null, energy || null, notes || null,
+      exercises ? JSON.stringify(exercises) : null,
+      duration || null, distance || null, intensity || null, meteo || null, bpm || null
+    );
+    res.json({ id: result.lastInsertRowid, success: true });
+  } catch (err) {
+    console.error('Erreur POST tracking:', err.message);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+});
+
+// DELETE /api/tracking/entries/:id — supprimer une entrée
+app.delete('/api/tracking/entries/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    db.prepare('DELETE FROM tracking_entries WHERE id = ?').run(id);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Erreur DELETE tracking:', err.message);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+});
 
 // ============================================================
 // DÉMARRAGE

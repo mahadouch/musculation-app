@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-
-const STORAGE_KEY = 'musculation_journal';
+import { fetchTrackingEntries } from '../api';
 
 const cyclingTips = [
   'Le cyclisme léger (30 min) est idéal les jours de repos pour favoriser la récupération sans brûler trop de calories.',
@@ -21,19 +20,20 @@ const weatherOptions = [
   { label: '💨 Vent', value: 'Vent' },
 ];
 
-function loadEntries() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  } catch {
-    return [];
-  }
-}
-
 export default function Cycling({ data }) {
   const [entries, setEntries] = useState([]);
 
+  const loadEntries = async () => {
+    try {
+      const data = await fetchTrackingEntries();
+      setEntries(data);
+    } catch (err) {
+      console.error('Erreur chargement entrées cyclisme:', err);
+    }
+  };
+
   useEffect(() => {
-    setEntries(loadEntries());
+    loadEntries();
   }, []);
 
   const cyclingEntries = entries.filter(e => e.type === 'cyclisme');
