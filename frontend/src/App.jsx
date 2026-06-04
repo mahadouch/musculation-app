@@ -16,6 +16,7 @@ import Supplements from './components/Supplements';
 import Progression from './components/Progression';
 import Videos from './components/Videos';
 import Tracking from './components/Tracking';
+import Cycling from './components/Cycling';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
     { id: 'supplements', label: '💊 Suppléments', icon: '💊' },
     { id: 'shopping', label: '🛒 Courses', icon: '🛒' },
     { id: 'tracking', label: '📓 Suivi', icon: '📓' },
+    { id: 'cycling', label: '🚴 Cyclisme', icon: '🚴' },
   ];
 
   const renderSection = () => {
@@ -124,6 +126,8 @@ function App() {
         return <ShoppingList data={program.shoppingList} />;
       case 'tracking':
         return <Tracking data={program.tracking} />;
+      case 'cycling':
+        return <Cycling data={program.schedule} />;
       default:
         return <Profile data={program.profile} />;
     }
