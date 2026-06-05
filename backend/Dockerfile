@@ -1,5 +1,8 @@
 FROM node:20-alpine
 
+# Outils de compilation pour better-sqlite3 (module natif C++)
+RUN apk add --no-cache python3 make g++
+
 WORKDIR /app
 
 COPY package.json package-lock.json ./
