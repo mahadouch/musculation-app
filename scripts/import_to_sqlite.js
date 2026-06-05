@@ -650,13 +650,13 @@ const videosData = [
   ['Rowing haltère à une main', 1, 2, 'STOP F*cking Up Dumbbell Rows (PROPER FORM!)', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=gfUg6qWohTk'],
   ['Écarté haltères couché', 1, 3, 'Dumbbell Flyes: The Right Way & The Wrong Way', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=eozdVDA78K0'],
   ['Curl biceps', 1, 4, 'Bicep Curls: The Best Way (SET THE RECORD STRAIGHT!)', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=ykJmrZ5v0Oo'],
-  ['Extension triceps', 1, 5, 'Tricep Extensions: Best & Worst Exercises', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=6TSP1J3yC5g'],
-  ['Goblet Squat', 2, 1, 'Goblet Squat: The Best Exercise You\'re Not Doing!', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=MeIqId7AFlw'],
-  ['Fentes marchées', 2, 2, 'How To Lunge (3 Mistakes You\'re Making!)', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=L8fvypPHRoA'],
+  ['Extension triceps', 1, 5, 'Tricep Extensions: Overhead Form Tutorial', 'ScottHermanFitness', 'https://www.youtube.com/watch?v=fYqswDVbJDg'],
+  ['Goblet Squat', 2, 1, 'The Goblet Squat Exercise Guide', 'Fit Father Project', 'https://www.youtube.com/watch?v=9W5KAqHfDe8'],
+  ['Fentes marchées', 2, 2, 'How to Do Dumbbell Lunges Properly', 'Fit Father Project', 'https://www.youtube.com/watch?v=qQyCK_rxzN0'],
   ['Soulevé de terre jambes tendues', 2, 3, 'Romanian Deadlift: Perfect Form Tutorial', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=_oyxCn2iSjU'],
-  ['Mollets debout', 2, 4, 'Calf Raises: The Best Exercise for Bigger Calves', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=-VoKAb8NDkM'],
-  ['Gainage/Planche', 2, 5, 'How To Plank: Perfect Form', 'ATHLEAN-X™', 'https://www.youtube.com/watch?v=pvDjs9rn3hU'],
-  ['Thruster haltères', 3, 1, 'Dumbbell Thruster: How To Do It Correctly', 'WODprep', 'https://www.youtube.com/watch?v=sZ8gGcQ2KxQ'],
+  ['Mollets debout', 2, 4, 'Calf Raises: The Correct Way', 'Rehab and Revive', 'https://www.youtube.com/watch?v=CtyIVeJH6lI'],
+  ['Gainage/Planche', 2, 5, 'How to do the perfect PLANK', 'Get Exercise Confident', 'https://www.youtube.com/watch?v=6LqqeBtFn9M'],
+  ['Thruster haltères', 3, 1, 'Dumbbell Thruster Tips', 'Misfit Athletics', 'https://www.youtube.com/watch?v=cPzfRo_jti0'],
 ];
 
 const insertVideos = db.transaction(() => {
