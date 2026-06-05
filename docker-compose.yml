@@ -6,9 +6,10 @@ services:
     expose:
       - "3001"
     volumes:
-      - db-data:/app
+      - db-data:/app/data
     environment:
       - NODE_ENV=production
+      - DB_PATH=/app/data/musculation.db
 
   frontend:
     build: ./frontend

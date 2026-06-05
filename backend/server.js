@@ -10,7 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // Ouvrir la base SQLite
-const db = new Database(path.join(__dirname, '..', 'musculation.db'));
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, '..', 'musculation.db');
+const db = new Database(DB_PATH);
 db.pragma('journal_mode = WAL');
 
 // Créer les tables de tracking si elles n'existent pas
