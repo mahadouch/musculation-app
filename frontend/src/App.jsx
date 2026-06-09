@@ -17,6 +17,7 @@ import Progression from './components/Progression';
 import Videos from './components/Videos';
 import Tracking from './components/Tracking';
 import Cycling from './components/Cycling';
+import Nutrients from './components/Nutrients';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
     { id: 'supplements', label: '💊 Suppléments', icon: '💊' },
     { id: 'shopping', label: '🛒 Courses', icon: '🛒' },
     { id: 'tracking', label: '📓 Suivi', icon: '📓' },
+    { id: 'nutrients', label: '🧮 Nutriments', icon: '🧮' },
     { id: 'cycling', label: '🚴 Cyclisme', icon: '🚴' },
   ];
 
@@ -127,6 +129,8 @@ function App() {
         return <ShoppingList data={program.shoppingList} />;
       case 'tracking':
         return <Tracking data={program.tracking} />;
+      case 'nutrients':
+        return <Nutrients data={program} />;
       case 'cycling':
         return <Cycling data={program.schedule} />;
       default:
