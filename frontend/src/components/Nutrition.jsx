@@ -153,22 +153,77 @@ export default function Nutrition({ data, profile }) {
         </div>
       </div>
 
-      {/* Exemple de journée alimentaire */}
+      {/* 4 Exemples de journées alimentaires */}
       <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: 15 }}>
-        🍳 Exemple de journée alimentaire
+        🍳 Exemples de journées alimentaires
       </h3>
-      <div className="card-grid">
-        {data.meals.map((meal, i) => (
-          <div className="meal-card" key={i}>
-            <h4>{meal.name}</h4>
-            <ul>
-              {meal.items.map((item, j) => (
-                <li key={j}>{item}</li>
-              ))}
-            </ul>
+
+      {[
+        {
+          title: '📋 Journée type (~2650 kcal)',
+          tag: 'Standard',
+          tagColor: '#d97757',
+          meals: data.meals,
+        },
+        {
+          title: '🏋️ Journée entraînement (~2800 kcal)',
+          tag: 'Entraînement',
+          tagColor: '#4a9d6e',
+          meals: [
+            { name: '🌅 Petit-déjeuner (7h) - ~500 kcal', items: ['4 œufs brouillés', '2 tranches de pain complet + confiture', '1 banane', '1 verre de jus d\'orange'] },
+            { name: '🥜 Collation matin (10h) - ~350 kcal', items: ['Shake whey (30g) + banane', '30g d\'amandes'] },
+            { name: '🍽️ Déjeuner (13h) - ~650 kcal', items: ['200g de poulet', '200g de riz (poids cuit)', 'Légumes variés', '1 cuillère d\'huile d\'olive'] },
+            { name: '⚡ Pré-entraînement (16h) - ~400 kcal', items: ['150g de flocons d\'avoine', '1 banane', '1 café'] },
+            { name: '🥩 Post-entraînement (18h30) - ~600 kcal', items: ['200g de bœuf haché 5%', '250g de pâtes', 'Légumes grillés'] },
+            { name: '🧀 Avant le coucher (21h) - ~300 kcal', items: ['Fromage blanc 0% (200g)', 'Noix de cajou (20g)', '1 fruit'] },
+          ],
+        },
+        {
+          title: '💤 Journée repos (~2500 kcal)',
+          tag: 'Repos',
+          tagColor: '#4a7ab5',
+          meals: [
+            { name: '🌅 Petit-déjeuner (8h) - ~450 kcal', items: ['3 œufs + 2 blancs (omelette)', '1 tranche de pain complet', '1 avocat (½)', 'Café sans sucre'] },
+            { name: '🥜 Collation (11h) - ~300 kcal', items: ['Yaourt grec (150g)', 'Granola (30g)', 'Fruits rouges'] },
+            { name: '🍽️ Déjeuner (13h) - ~600 kcal', items: ['200g de saumon', '150g de riz basmati', 'Salade verte + concombre', '10g d\'huile de colza'] },
+            { name: '🍌 Collation (16h) - ~350 kcal', items: ['2 tartines de pain complet', 'Beurre de cacahuète (1 cuillère)', '1 pomme'] },
+            { name: '🥩 Dîner (19h30) - ~550 kcal', items: ['200g de dinde', '200g de patate douce', 'Légumes vapeur', '1 cuillère d\'huile d\'olive'] },
+            { name: '🧀 Avant le coucher (21h30) - ~250 kcal', items: ['Cottage cheese (150g)', 'Noix (20g)', '1 kiwi'] },
+          ],
+        },
+        {
+          title: '🔥 Journée masse (~3000 kcal)',
+          tag: 'Surplus',
+          tagColor: '#7c6abf',
+          meals: [
+            { name: '🌅 Petit-déjeuner (7h) - ~600 kcal', items: ['5 œufs (3 entiers + 2 blancs)', '3 tranches de pain complet + beurre de cacahuète', '1 banane + 1 kiwi', 'Verre de lait (250ml)'] },
+            { name: '🥜 Collation matin (10h) - ~400 kcal', items: ['Shake masse (whey + avoine + banane + lait)', 'Poignée de noix (40g)'] },
+            { name: '🍽️ Déjeuner (13h) - ~750 kcal', items: ['250g de poulet ou thon', '250g de riz (poids cuit)', 'Légumes variés au four', '2 cuillères d\'huile d\'olive'] },
+            { name: '🍌 Collation après-midi (16h) - ~400 kcal', items: ['3 tartines de pain complet', 'Beurre de cacahuète (2 cuillères)', '1 banane + 1 pomme'] },
+            { name: '🥩 Dîner (19h) - ~600 kcal', items: ['250g de steak ou côte de bœuf', '200g de pâtes complètes', 'Légumes grillés', '10g d\'huile d\'olive'] },
+            { name: '🧀 Avant le coucher (21h30) - ~250 kcal', items: ['Fromage blanc (200g)', 'Miel (1 cuillère)', 'Noix de cajou (30g)'] },
+          ],
+        },
+      ].map((plan, pi) => (
+        <div className="card" key={pi} style={{ marginBottom: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 15 }}>
+            <h4 style={{ margin: 0 }}>{plan.title}</h4>
+            <span className="tag" style={{ background: `${plan.tagColor}18`, color: plan.tagColor }}>{plan.tag}</span>
           </div>
-        ))}
-      </div>
+          <div className="card-grid">
+            {plan.meals.map((meal, i) => (
+              <div className="meal-card" key={i}>
+                <h4>{meal.name}</h4>
+                <ul>
+                  {meal.items.map((item, j) => (
+                    <li key={j}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </>
   );
 }
