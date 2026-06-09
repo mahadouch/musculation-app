@@ -112,7 +112,7 @@ function App() {
       case 'warmup':
         return <Warmup data={program.warmup} />;
       case 'nutrition':
-        return <Nutrition data={program.nutrition} />;
+        return <Nutrition data={program.nutrition} profile={program.profile} />;
       case 'goldenrules':
         return <GoldenRules data={program.goldenRules} />;
       case 'errors':
