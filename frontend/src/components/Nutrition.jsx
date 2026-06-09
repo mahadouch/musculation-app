@@ -204,6 +204,19 @@ export default function Nutrition({ data, profile }) {
             { name: '🧀 Avant le coucher (21h30) - ~250 kcal', items: ['Fromage blanc (200g)', 'Miel (1 cuillère)', 'Noix de cajou (30g)'] },
           ],
         },
+        {
+          title: '💰 Journée économique (~2600 kcal)',
+          tag: 'Budget',
+          tagColor: '#d4943a',
+          meals: [
+            { name: '🌅 Petit-déjeuner (7h) - ~500 kcal', items: ['4 œufs brouillés', '2 tranches de pain de mie', '1 banane', 'Lait (250ml)'] },
+            { name: '🥜 Collation matin (10h) - ~300 kcal', items: ['Flocons d\'avoine (80g) + lait', '1 cuillère de miel'] },
+            { name: '🍽️ Déjeuner (13h) - ~650 kcal', items: ['200g de cuisse de poulet (pilons)', '200g de riz basmati', 'Légumes surgelés (haricots verts)', '1 cuillère d\'huile de tournesol'] },
+            { name: '🍌 Collation (16h) - ~350 kcal', items: ['2 œufs durs', '2 tartines de pain complet', '1 pomme'] },
+            { name: '🥩 Dîner (19h30) - ~600 kcal', items: ['200g de thon en conserve', '200g de pâtes', 'Sauce tomate maison', '1 cuillère d\'huile d\'olive'] },
+            { name: '🧀 Avant le coucher (21h30) - ~200 kcal', items: ['Fromage blanc (150g)', 'Noix de cajou (20g)'] },
+          ],
+        },
       ].map((plan, pi) => (
         <div className="card" key={pi} style={{ marginBottom: 16 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 15 }}>
