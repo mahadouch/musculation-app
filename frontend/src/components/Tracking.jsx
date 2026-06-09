@@ -181,11 +181,11 @@ export default function Tracking({ data }) {
 
   const inputStyle = {
     width: '100%', padding: '10px 14px', borderRadius: 10,
-    border: '1px solid #2a2a40', background: '#12121a',
+    border: '1px solid #e8e4df', background: '#f5f0eb',
     color: 'white', fontSize: '1rem', fontFamily: 'inherit',
   };
 
-  const labelStyle = { color: '#a0a0b8', fontSize: '0.85rem', display: 'block', marginBottom: 6 };
+  const labelStyle = { color: '#5c5c5c', fontSize: '0.85rem', display: 'block', marginBottom: 6 };
 
   return (
     <>
@@ -206,12 +206,12 @@ export default function Tracking({ data }) {
             display: 'flex', alignItems: 'flex-start', gap: 10,
           }}>
             <span style={{
-              background: 'rgba(233, 69, 96, 0.2)', color: '#ff6b81',
+              background: 'rgba(217, 119, 87, 0.1)', color: '#d97757',
               width: 24, height: 24, borderRadius: '50%',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '0.75rem', fontWeight: 700, flexShrink: 0,
             }}>{i + 1}</span>
-            <span style={{ color: '#a0a0b8', fontSize: '0.9rem' }}>{tip}</span>
+            <span style={{ color: '#5c5c5c', fontSize: '0.9rem' }}>{tip}</span>
           </div>
         ))}
       </div>
@@ -231,7 +231,7 @@ export default function Tracking({ data }) {
         <>
           {!showForm ? (
             <div className="card" style={{ textAlign: 'center', padding: 40 }}>
-              <p style={{ fontSize: '1.1rem', color: '#a0a0b8', marginBottom: 20 }}>
+              <p style={{ fontSize: '1.1rem', color: '#5c5c5c', marginBottom: 20 }}>
                 {totalSessions === 0
                   ? "Tu n'as pas encore d'entrées. Commence ton journal !"
                   : `Tu as ${totalSessions} séance${totalSessions > 1 ? 's' : ''} enregistrée${totalSessions > 1 ? 's' : ''}.`}
@@ -239,7 +239,7 @@ export default function Tracking({ data }) {
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <button onClick={() => { setSessionType('musculation'); initExercises(1); setShowForm(true); }}
                   style={{
-                    background: 'linear-gradient(135deg, #e94560, #0f3460)',
+                    background: 'linear-gradient(135deg, #d97757, #e8e4df)',
                     color: 'white', border: 'none', padding: '14px 32px', borderRadius: 12,
                     fontSize: '1rem', fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit',
                   }}>
@@ -247,8 +247,8 @@ export default function Tracking({ data }) {
                 </button>
                 <button onClick={() => { setSessionType('cyclisme'); setShowForm(true); }}
                   style={{
-                    background: 'linear-gradient(135deg, #0f3460, #16213e)',
-                    color: 'white', border: '2px solid #e94560', padding: '14px 32px', borderRadius: 12,
+                    background: 'linear-gradient(135deg, #e8e4df, #f5f0eb)',
+                    color: 'white', border: '2px solid #d97757', padding: '14px 32px', borderRadius: 12,
                     fontSize: '1rem', fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit',
                   }}>
                   🚴 Nouvelle sortie cycliste
@@ -270,9 +270,9 @@ export default function Tracking({ data }) {
                   }}
                     style={{
                       flex: 1, padding: '14px 20px', borderRadius: 12, fontSize: '1rem', fontWeight: 600,
-                      border: sessionType === 'musculation' ? '2px solid #e94560' : '2px solid #2a2a40',
-                      background: sessionType === 'musculation' ? 'rgba(233, 69, 96, 0.2)' : '#12121a',
-                      color: sessionType === 'musculation' ? '#ff6b81' : '#a0a0b8',
+                      border: sessionType === 'musculation' ? '2px solid #d97757' : '2px solid #e8e4df',
+                      background: sessionType === 'musculation' ? 'rgba(217, 119, 87, 0.1)' : '#f5f0eb',
+                      color: sessionType === 'musculation' ? '#d97757' : '#5c5c5c',
                       cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s',
                     }}>
                     🏋️ Musculation
@@ -280,9 +280,9 @@ export default function Tracking({ data }) {
                   <button type="button" onClick={() => setSessionType('cyclisme')}
                     style={{
                       flex: 1, padding: '14px 20px', borderRadius: 12, fontSize: '1rem', fontWeight: 600,
-                      border: sessionType === 'cyclisme' ? '2px solid #e94560' : '2px solid #2a2a40',
-                      background: sessionType === 'cyclisme' ? 'rgba(233, 69, 96, 0.2)' : '#12121a',
-                      color: sessionType === 'cyclisme' ? '#ff6b81' : '#a0a0b8',
+                      border: sessionType === 'cyclisme' ? '2px solid #d97757' : '2px solid #e8e4df',
+                      background: sessionType === 'cyclisme' ? 'rgba(217, 119, 87, 0.1)' : '#f5f0eb',
+                      color: sessionType === 'cyclisme' ? '#d97757' : '#5c5c5c',
                       cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s',
                     }}>
                     🚴 Cyclisme
@@ -312,9 +312,9 @@ export default function Tracking({ data }) {
                             onClick={() => handleDayChange(d)}
                             style={{
                               flex: 1, padding: '10px 8px', borderRadius: 10,
-                              border: form.day === d ? '2px solid #e94560' : '2px solid #2a2a40',
-                              background: form.day === d ? 'rgba(233, 69, 96, 0.2)' : '#12121a',
-                              color: form.day === d ? '#ff6b81' : '#a0a0b8',
+                              border: form.day === d ? '2px solid #d97757' : '2px solid #e8e4df',
+                              background: form.day === d ? 'rgba(217, 119, 87, 0.1)' : '#f5f0eb',
+                              color: form.day === d ? '#d97757' : '#5c5c5c',
                               cursor: 'pointer', fontWeight: form.day === d ? 700 : 400,
                               fontSize: '0.85rem', fontFamily: 'inherit', transition: 'all 0.2s',
                             }}>
@@ -349,9 +349,9 @@ export default function Tracking({ data }) {
                           onClick={() => setForm(f => ({ ...f, energy: e }))}
                           style={{
                             flex: 1, padding: '8px 6px', borderRadius: 8,
-                            border: form.energy === e ? '2px solid #e94560' : '1px solid #2a2a40',
-                            background: form.energy === e ? 'rgba(233, 69, 96, 0.15)' : 'transparent',
-                            color: form.energy === e ? '#ff6b81' : '#6b6b80',
+                            border: form.energy === e ? '2px solid #d97757' : '1px solid #e8e4df',
+                            background: form.energy === e ? 'rgba(217, 119, 87, 0.08)' : 'transparent',
+                            color: form.energy === e ? '#d97757' : '#999999',
                             cursor: 'pointer', fontSize: '0.78rem', fontWeight: 600,
                             fontFamily: 'inherit', transition: 'all 0.2s',
                           }}>
@@ -369,8 +369,8 @@ export default function Tracking({ data }) {
                         onClick={() => setForm(f => ({ ...f, mood: m }))}
                         style={{
                           width: 48, height: 48, borderRadius: 12,
-                          border: form.mood === m ? '2px solid #e94560' : '2px solid #2a2a40',
-                          background: form.mood === m ? 'rgba(233, 69, 96, 0.2)' : '#12121a',
+                          border: form.mood === m ? '2px solid #d97757' : '2px solid #e8e4df',
+                          background: form.mood === m ? 'rgba(217, 119, 87, 0.1)' : '#f5f0eb',
                           fontSize: '1.5rem', cursor: 'pointer',
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
                           transition: 'all 0.2s',
@@ -390,7 +390,7 @@ export default function Tracking({ data }) {
                     <h3>{dayLabels[form.day]} — Exercices</h3>
                   </div>
                   {form.exercises.length === 0 ? (
-                    <p style={{ color: '#6b6b80' }}>Sélectionne un jour pour charger les exercices</p>
+                    <p style={{ color: '#999999' }}>Sélectionne un jour pour charger les exercices</p>
                   ) : (
                     <div className="table-container">
                       <table>
@@ -413,7 +413,7 @@ export default function Tracking({ data }) {
                                 <input type="checkbox"
                                   checked={ex.completed}
                                   onChange={e => updateExercise(i, 'completed', e.target.checked)}
-                                  style={{ width: 18, height: 18, cursor: 'pointer', accentColor: '#e94560' }} />
+                                  style={{ width: 18, height: 18, cursor: 'pointer', accentColor: '#d97757' }} />
                               </td>
                               <td style={{ fontWeight: 600, fontSize: '0.95rem' }}>{ex.name}</td>
                               <td>
@@ -422,7 +422,7 @@ export default function Tracking({ data }) {
                                   onChange={e => updateExercise(i, 'setsDone', parseInt(e.target.value) || 1)}
                                   style={{
                                     width: 60, padding: '6px 8px', borderRadius: 8,
-                                    border: '1px solid #2a2a40', background: '#0a0a0f',
+                                    border: '1px solid #e8e4df', background: '#faf8f5',
                                     color: 'white', fontSize: '0.9rem', textAlign: 'center',
                                     fontFamily: 'inherit',
                                   }} />
@@ -432,7 +432,7 @@ export default function Tracking({ data }) {
                                   onChange={e => updateExercise(i, 'repsDone', e.target.value)}
                                   style={{
                                     width: 80, padding: '6px 8px', borderRadius: 8,
-                                    border: '1px solid #2a2a40', background: '#0a0a0f',
+                                    border: '1px solid #e8e4df', background: '#faf8f5',
                                     color: 'white', fontSize: '0.9rem', textAlign: 'center',
                                     fontFamily: 'inherit',
                                   }} />
@@ -443,7 +443,7 @@ export default function Tracking({ data }) {
                                   onChange={e => updateExercise(i, 'weight', e.target.value)}
                                   style={{
                                     width: 70, padding: '6px 8px', borderRadius: 8,
-                                    border: '1px solid #2a2a40', background: '#0a0a0f',
+                                    border: '1px solid #e8e4df', background: '#faf8f5',
                                     color: 'white', fontSize: '0.9rem', textAlign: 'center',
                                     fontFamily: 'inherit',
                                   }} />
@@ -459,7 +459,7 @@ export default function Tracking({ data }) {
                       marginTop: 12, padding: '8px 12px', borderRadius: 8,
                       background: 'rgba(0, 214, 143, 0.1)', display: 'inline-block',
                     }}>
-                      <span style={{ color: '#00d68f', fontWeight: 700, fontSize: '0.85rem' }}>
+                      <span style={{ color: '#4a9d6e', fontWeight: 700, fontSize: '0.85rem' }}>
                         ✅ {completedCount(form.exercises)}/{form.exercises.length} exercices complétés
                       </span>
                     </div>
@@ -506,9 +506,9 @@ export default function Tracking({ data }) {
                             onClick={() => setForm(f => ({ ...f, intensity: opt }))}
                             style={{
                               flex: 1, padding: '10px 8px', borderRadius: 10,
-                              border: form.intensity === opt ? '2px solid #e94560' : '2px solid #2a2a40',
-                              background: form.intensity === opt ? 'rgba(233, 69, 96, 0.2)' : '#12121a',
-                              color: form.intensity === opt ? '#ff6b81' : '#a0a0b8',
+                              border: form.intensity === opt ? '2px solid #d97757' : '2px solid #e8e4df',
+                              background: form.intensity === opt ? 'rgba(217, 119, 87, 0.1)' : '#f5f0eb',
+                              color: form.intensity === opt ? '#d97757' : '#5c5c5c',
                               cursor: 'pointer', fontWeight: form.intensity === opt ? 700 : 400,
                               fontSize: '0.85rem', fontFamily: 'inherit', transition: 'all 0.2s',
                             }}>
@@ -525,9 +525,9 @@ export default function Tracking({ data }) {
                             onClick={() => setForm(f => ({ ...f, meteo: w.value }))}
                             style={{
                               flex: 1, padding: '10px 6px', borderRadius: 10,
-                              border: form.meteo === w.value ? '2px solid #e94560' : '2px solid #2a2a40',
-                              background: form.meteo === w.value ? 'rgba(233, 69, 96, 0.2)' : '#12121a',
-                              color: form.meteo === w.value ? '#ff6b81' : '#a0a0b8',
+                              border: form.meteo === w.value ? '2px solid #d97757' : '2px solid #e8e4df',
+                              background: form.meteo === w.value ? 'rgba(217, 119, 87, 0.1)' : '#f5f0eb',
+                              color: form.meteo === w.value ? '#d97757' : '#5c5c5c',
                               cursor: 'pointer', fontWeight: form.meteo === w.value ? 700 : 400,
                               fontSize: '0.8rem', fontFamily: 'inherit', transition: 'all 0.2s',
                               textAlign: 'center',
@@ -552,7 +552,7 @@ export default function Tracking({ data }) {
                   onChange={e => setForm(f => ({ ...f, notes: e.target.value }))}
                   style={{
                     width: '100%', padding: '12px 14px', borderRadius: 10,
-                    border: '1px solid #2a2a40', background: '#12121a',
+                    border: '1px solid #e8e4df', background: '#f5f0eb',
                     color: 'white', fontSize: '0.95rem', fontFamily: 'inherit',
                     resize: 'vertical', lineHeight: 1.5,
                   }} />
@@ -563,8 +563,8 @@ export default function Tracking({ data }) {
                 <button type="button" onClick={() => { setShowForm(false); resetForm(); }}
                   style={{
                     padding: '12px 24px', borderRadius: 10,
-                    border: '2px solid #2a2a40', background: 'transparent',
-                    color: '#a0a0b8', fontSize: '0.95rem', fontWeight: 600,
+                    border: '2px solid #e8e4df', background: 'transparent',
+                    color: '#5c5c5c', fontSize: '0.95rem', fontWeight: 600,
                     cursor: 'pointer', fontFamily: 'inherit',
                   }}>
                   Annuler
@@ -572,7 +572,7 @@ export default function Tracking({ data }) {
                 <button type="submit"
                   style={{
                     padding: '12px 32px', borderRadius: 10,
-                    border: 'none', background: 'linear-gradient(135deg, #e94560, #0f3460)',
+                    border: 'none', background: 'linear-gradient(135deg, #d97757, #e8e4df)',
                     color: 'white', fontSize: '1rem', fontWeight: 700,
                     cursor: 'pointer', fontFamily: 'inherit',
                     boxShadow: '0 0 20px rgba(233, 69, 96, 0.3)',
@@ -589,7 +589,7 @@ export default function Tracking({ data }) {
       {activeTab === 'history' && (
         <div>
           {entries.length === 0 ? (
-            <div className="card" style={{ textAlign: 'center', padding: 40, color: '#6b6b80' }}>
+            <div className="card" style={{ textAlign: 'center', padding: 40, color: '#999999' }}>
               <p style={{ fontSize: '1.1rem' }}>Aucune séance enregistrée pour l'instant.</p>
               <p style={{ marginTop: 8 }}>Commence par logger ta première séance !</p>
             </div>
@@ -602,7 +602,7 @@ export default function Tracking({ data }) {
                     style={{
                       position: 'absolute', top: 12, right: 12,
                       background: 'rgba(255, 61, 113, 0.15)', border: 'none',
-                      color: '#ff3d71', width: 32, height: 32, borderRadius: 8,
+                      color: '#c45c5c', width: 32, height: 32, borderRadius: 8,
                       cursor: 'pointer', fontSize: '1rem', display: 'flex',
                       alignItems: 'center', justifyContent: 'center',
                     }} title="Supprimer">🗑️</button>
@@ -610,16 +610,16 @@ export default function Tracking({ data }) {
                   {/* Header row */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
                     <span style={{
-                      background: isCycling ? 'rgba(15, 52, 96, 0.5)' : 'rgba(233, 69, 96, 0.2)',
-                      color: isCycling ? '#5dade2' : '#ff6b81',
+                      background: isCycling ? 'rgba(15, 52, 96, 0.5)' : 'rgba(217, 119, 87, 0.1)',
+                      color: isCycling ? '#4a7ab5' : '#d97757',
                       padding: '4px 12px', borderRadius: 20, fontSize: '0.8rem', fontWeight: 600,
                     }}>
                       {isCycling ? '🚴 Cyclisme' : dayLabels[entry.day] || 'Séance'}
                     </span>
-                    <span style={{ color: '#a0a0b8', fontSize: '0.9rem' }}>📅 {entry.date}</span>
+                    <span style={{ color: '#5c5c5c', fontSize: '0.9rem' }}>📅 {entry.date}</span>
                     <span style={{ fontSize: '1.3rem' }}>{entry.mood}</span>
                     <span className="tag tag-yellow">{entry.energy}</span>
-                    <span style={{ color: '#ff6b81', fontWeight: 700 }}>⚖️ {entry.weight} kg</span>
+                    <span style={{ color: '#d97757', fontWeight: 700 }}>⚖️ {entry.weight} kg</span>
                   </div>
 
                   {/* Cycling details */}
@@ -652,7 +652,7 @@ export default function Tracking({ data }) {
                               <td style={{ fontWeight: 600 }}>{ex.name}</td>
                               <td>{ex.setsDone}</td>
                               <td>{ex.repsDone}</td>
-                              <td style={{ color: '#ff6b81', fontWeight: 600 }}>{ex.weight || '—'} kg</td>
+                              <td style={{ color: '#d97757', fontWeight: 600 }}>{ex.weight || '—'} kg</td>
                               <td>{ex.completed ? '✅' : '⬜'}</td>
                             </tr>
                           ))}
@@ -664,7 +664,7 @@ export default function Tracking({ data }) {
                   {entry.notes && (
                     <div style={{
                       marginTop: 12, padding: '10px 14px', borderRadius: 10,
-                      background: 'rgba(255, 255, 255, 0.03)', color: '#a0a0b8',
+                      background: 'rgba(255, 255, 255, 0.03)', color: '#5c5c5c',
                       fontSize: '0.9rem', fontStyle: 'italic',
                     }}>
                       📝 {entry.notes}
@@ -681,7 +681,7 @@ export default function Tracking({ data }) {
       {activeTab === 'stats' && (
         <div>
           {entries.length === 0 ? (
-            <div className="card" style={{ textAlign: 'center', padding: 40, color: '#6b6b80' }}>
+            <div className="card" style={{ textAlign: 'center', padding: 40, color: '#999999' }}>
               <p>Pas encore de données. Commence par logger des séances !</p>
             </div>
           ) : (
@@ -695,22 +695,22 @@ export default function Tracking({ data }) {
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#a0a0b8' }}>Total séances</span>
-                      <span style={{ fontWeight: 700, color: '#ff6b81' }}>{muscEntries.length} 🏋️ / {cycEntries.length} 🚴</span>
+                      <span style={{ color: '#5c5c5c' }}>Total séances</span>
+                      <span style={{ fontWeight: 700, color: '#d97757' }}>{muscEntries.length} 🏋️ / {cycEntries.length} 🚴</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#a0a0b8' }}>Poids actuel</span>
-                      <span style={{ fontWeight: 700, color: '#ff6b81' }}>{weightEnd} kg</span>
+                      <span style={{ color: '#5c5c5c' }}>Poids actuel</span>
+                      <span style={{ fontWeight: 700, color: '#d97757' }}>{weightEnd} kg</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#a0a0b8' }}>Première séance</span>
+                      <span style={{ color: '#5c5c5c' }}>Première séance</span>
                       <span style={{ fontWeight: 700 }}>{weightStart} kg</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#a0a0b8' }}>Évolution</span>
+                      <span style={{ color: '#5c5c5c' }}>Évolution</span>
                       <span style={{
                         fontWeight: 700,
-                        color: weightDiff >= 0 ? '#00d68f' : '#ff3d71',
+                        color: weightDiff >= 0 ? '#4a9d6e' : '#c45c5c',
                       }}>
                         {weightDiff >= 0 ? '+' : ''}{weightDiff.toFixed(1)} kg
                       </span>
@@ -727,7 +727,7 @@ export default function Tracking({ data }) {
                     <div style={{ fontSize: '3rem' }}>
                       {avgMood >= 4.5 ? '😊' : avgMood >= 3.5 ? '🙂' : avgMood >= 2.5 ? '😐' : avgMood >= 1.5 ? '😟' : '😫'}
                     </div>
-                    <div style={{ color: '#a0a0b8', marginTop: 8 }}>
+                    <div style={{ color: '#5c5c5c', marginTop: 8 }}>
                       {avgMood.toFixed(1)}/5 en moyenne
                     </div>
                   </div>
@@ -738,7 +738,7 @@ export default function Tracking({ data }) {
               {cycEntries.length > 0 && (
                 <div className="card" style={{
                   border: '1px solid rgba(15, 52, 96, 0.5)',
-                  background: 'linear-gradient(145deg, #16213e 0%, #0f3460 100%)',
+                  background: 'linear-gradient(145deg, #f5f0eb 0%, #e8e4df 100%)',
                 }}>
                   <div className="card-header">
                     <span className="emoji">🚴</span>
@@ -749,29 +749,29 @@ export default function Tracking({ data }) {
                       flex: 1, minWidth: 120, padding: 16, borderRadius: 12,
                       background: 'rgba(255, 255, 255, 0.05)', textAlign: 'center',
                     }}>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#5dade2' }}>{cycEntries.length}</div>
-                      <div style={{ color: '#a0a0b8', fontSize: '0.85rem', marginTop: 4 }}>Sorties</div>
+                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#4a7ab5' }}>{cycEntries.length}</div>
+                      <div style={{ color: '#5c5c5c', fontSize: '0.85rem', marginTop: 4 }}>Sorties</div>
                     </div>
                     <div style={{
                       flex: 1, minWidth: 120, padding: 16, borderRadius: 12,
                       background: 'rgba(255, 255, 255, 0.05)', textAlign: 'center',
                     }}>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#5dade2' }}>{cycTotalKm.toFixed(1)}</div>
-                      <div style={{ color: '#a0a0b8', fontSize: '0.85rem', marginTop: 4 }}>Kilomètres</div>
+                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#4a7ab5' }}>{cycTotalKm.toFixed(1)}</div>
+                      <div style={{ color: '#5c5c5c', fontSize: '0.85rem', marginTop: 4 }}>Kilomètres</div>
                     </div>
                     <div style={{
                       flex: 1, minWidth: 120, padding: 16, borderRadius: 12,
                       background: 'rgba(255, 255, 255, 0.05)', textAlign: 'center',
                     }}>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#5dade2' }}>{cycTotalMin}</div>
-                      <div style={{ color: '#a0a0b8', fontSize: '0.85rem', marginTop: 4 }}>Minutes totales</div>
+                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#4a7ab5' }}>{cycTotalMin}</div>
+                      <div style={{ color: '#5c5c5c', fontSize: '0.85rem', marginTop: 4 }}>Minutes totales</div>
                     </div>
                     <div style={{
                       flex: 1, minWidth: 120, padding: 16, borderRadius: 12,
                       background: 'rgba(255, 255, 255, 0.05)', textAlign: 'center',
                     }}>
-                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#5dade2' }}>{cycAvgDuration}</div>
-                      <div style={{ color: '#a0a0b8', fontSize: '0.85rem', marginTop: 4 }}>Min moy / sortie</div>
+                      <div style={{ fontSize: '2rem', fontWeight: 800, color: '#4a7ab5' }}>{cycAvgDuration}</div>
+                      <div style={{ color: '#5c5c5c', fontSize: '0.85rem', marginTop: 4 }}>Min moy / sortie</div>
                     </div>
                   </div>
                 </div>
@@ -796,15 +796,15 @@ export default function Tracking({ data }) {
                           flex: 1, display: 'flex', flexDirection: 'column',
                           alignItems: 'center', gap: 4, minWidth: 30,
                         }}>
-                          <span style={{ fontSize: '0.7rem', color: '#ff6b81', fontWeight: 700 }}>
+                          <span style={{ fontSize: '0.7rem', color: '#d97757', fontWeight: 700 }}>
                             {w}
                           </span>
                           <div style={{
                             width: '100%', maxWidth: 40, height: `${Math.max(heightPct, 10)}%`,
-                            background: 'linear-gradient(to top, #e94560, #ff6b81)',
+                            background: 'linear-gradient(to top, #d97757, #d97757)',
                             borderRadius: '6px 6px 0 0', transition: 'height 0.5s',
                           }} />
-                          <span style={{ fontSize: '0.6rem', color: '#6b6b80', textAlign: 'center' }}>
+                          <span style={{ fontSize: '0.6rem', color: '#999999', textAlign: 'center' }}>
                             {entry.date.slice(5)}
                           </span>
                         </div>
@@ -829,8 +829,8 @@ export default function Tracking({ data }) {
                           flex: 1, minWidth: 140, padding: 16, borderRadius: 12,
                           background: 'rgba(255, 255, 255, 0.03)', textAlign: 'center',
                         }}>
-                          <div style={{ fontSize: '2rem', fontWeight: 800, color: '#ff6b81' }}>{count}</div>
-                          <div style={{ color: '#a0a0b8', fontSize: '0.85rem', marginTop: 4 }}>
+                          <div style={{ fontSize: '2rem', fontWeight: 800, color: '#d97757' }}>{count}</div>
+                          <div style={{ color: '#5c5c5c', fontSize: '0.85rem', marginTop: 4 }}>
                             {dayLabels[d]}
                           </div>
                         </div>

@@ -1,6 +1,6 @@
 export default function GoldenRules({ data }) {
   const emojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'];
-  const colors = ['#e94560', '#ffaa00', '#00d68f', '#5dade2', '#a78bfa'];
+  const colors = ['#d97757', '#d4943a', '#4a9d6e', '#4a7ab5', '#7c6abf'];
 
   return (
     <>
@@ -14,7 +14,7 @@ export default function GoldenRules({ data }) {
               <span className="emoji" style={{ fontSize: '1.8rem' }}>{emojis[i]}</span>
               <h3 style={{ color: colors[i] }}>{item.rule}</h3>
             </div>
-            <p style={{ color: '#a0a0b8', fontSize: '0.95rem' }}>{item.description}</p>
+            <p style={{ color: '#5c5c5c', fontSize: '0.95rem' }}>{item.description}</p>
           </div>
         ))}
       </div>

@@ -4,7 +4,7 @@ export default function ErrorsToAvoid({ data }) {
       <h2 className="section-title">
         <span className="icon">⚠️</span> ERREURS À ÉVITER
       </h2>
-      <div className="card" style={{ borderLeft: '4px solid #ff3d71' }}>
+      <div className="card" style={{ borderLeft: '4px solid #c45c5c' }}>
         {data.map((error, i) => (
           <div
             key={i}
@@ -18,7 +18,7 @@ export default function ErrorsToAvoid({ data }) {
           >
             <span style={{
               background: 'rgba(255, 61, 113, 0.2)',
-              color: '#ff3d71',
+              color: '#c45c5c',
               width: 28,
               height: 28,
               borderRadius: '50%',
@@ -31,7 +31,7 @@ export default function ErrorsToAvoid({ data }) {
             }}>
               {i + 1}
             </span>
-            <span style={{ color: '#a0a0b8' }}>{error}</span>
+            <span style={{ color: '#5c5c5c' }}>{error}</span>
           </div>
         ))}
       </div>

@@ -112,26 +112,26 @@ export default function Cycling({ data }) {
             <h3>Résumé de tes sorties</h3>
           </div>
           {totalSorties === 0 ? (
-            <p style={{ color: '#6b6b80', fontSize: '0.95rem' }}>
+            <p style={{ color: '#999999', fontSize: '0.95rem' }}>
               Aucune sortie cycliste enregistrée. Va dans "Suivi" pour logger tes sorties !
             </p>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#a0a0b8' }}>Total sorties</span>
-                <span style={{ fontWeight: 700, color: '#ff6b81' }}>{totalSorties}</span>
+                <span style={{ color: '#5c5c5c' }}>Total sorties</span>
+                <span style={{ fontWeight: 700, color: '#d97757' }}>{totalSorties}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#a0a0b8' }}>Total km</span>
-                <span style={{ fontWeight: 700, color: '#ff6b81' }}>{totalKm.toFixed(1)} km</span>
+                <span style={{ color: '#5c5c5c' }}>Total km</span>
+                <span style={{ fontWeight: 700, color: '#d97757' }}>{totalKm.toFixed(1)} km</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#a0a0b8' }}>Total minutes</span>
-                <span style={{ fontWeight: 700, color: '#ff6b81' }}>{totalMinutes} min</span>
+                <span style={{ color: '#5c5c5c' }}>Total minutes</span>
+                <span style={{ fontWeight: 700, color: '#d97757' }}>{totalMinutes} min</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#a0a0b8' }}>Durée moyenne</span>
-                <span style={{ fontWeight: 700, color: '#ff6b81' }}>{avgDuration} min</span>
+                <span style={{ color: '#5c5c5c' }}>Durée moyenne</span>
+                <span style={{ fontWeight: 700, color: '#d97757' }}>{avgDuration} min</span>
               </div>
             </div>
           )}
@@ -148,14 +148,14 @@ export default function Cycling({ data }) {
                 const count = cyclingEntries.filter(e => e.meteo === w.value).length;
                 return (
                   <div key={w.value} style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#a0a0b8' }}>{w.label}</span>
-                    <span style={{ fontWeight: 700, color: '#ff6b81' }}>{count} sortie{count > 1 ? 's' : ''}</span>
+                    <span style={{ color: '#5c5c5c' }}>{w.label}</span>
+                    <span style={{ fontWeight: 700, color: '#d97757' }}>{count} sortie{count > 1 ? 's' : ''}</span>
                   </div>
                 );
               })}
             </div>
           ) : (
-            <p style={{ color: '#6b6b80', fontSize: '0.95rem' }}>
+            <p style={{ color: '#999999', fontSize: '0.95rem' }}>
               Aucune donnée de météo.
             </p>
           )}
@@ -189,7 +189,7 @@ export default function Cycling({ data }) {
                     <td>{entry.distance ? `${entry.distance} km` : '—'}</td>
                     <td><span className="tag tag-yellow">{entry.intensity}</span></td>
                     <td>{entry.meteo || '—'}</td>
-                    <td style={{ color: '#ff6b81', fontWeight: 600 }}>{entry.weight} kg</td>
+                    <td style={{ color: '#d97757', fontWeight: 600 }}>{entry.weight} kg</td>
                   </tr>
                 ))}
               </tbody>
@@ -211,12 +211,12 @@ export default function Cycling({ data }) {
             display: 'flex', alignItems: 'flex-start', gap: 10,
           }}>
             <span style={{
-              background: 'rgba(233, 69, 96, 0.2)', color: '#ff6b81',
+              background: 'rgba(217, 119, 87, 0.1)', color: '#d97757',
               width: 24, height: 24, borderRadius: '50%',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '0.75rem', fontWeight: 700, flexShrink: 0,
             }}>{i + 1}</span>
-            <span style={{ color: '#a0a0b8', fontSize: '0.9rem' }}>{tip}</span>
+            <span style={{ color: '#5c5c5c', fontSize: '0.9rem' }}>{tip}</span>
           </div>
         ))}
       </div>

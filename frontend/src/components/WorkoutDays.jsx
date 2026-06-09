@@ -88,7 +88,7 @@ export default function WorkoutDays({ days }) {
 
               {ex.execution.length > 0 && (
                 <>
-                  <h4 style={{ fontSize: '0.9rem', color: '#a0a0b8', marginBottom: 8, marginTop: 15 }}>
+                  <h4 style={{ fontSize: '0.9rem', color: '#5c5c5c', marginBottom: 8, marginTop: 15 }}>
                     📋 Exécution :
                   </h4>
                   <ol className="steps">
@@ -101,7 +101,7 @@ export default function WorkoutDays({ days }) {
 
               {ex.errors.length > 0 && (
                 <div className="errors-list">
-                  <h4 style={{ fontSize: '0.9rem', color: '#a0a0b8', marginBottom: 8 }}>
+                  <h4 style={{ fontSize: '0.9rem', color: '#5c5c5c', marginBottom: 8 }}>
                     ⚠️ Erreurs courantes :
                   </h4>
                   {ex.errors.map((err, j) => (
@@ -145,7 +145,7 @@ export default function WorkoutDays({ days }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      color: '#ff6b81',
+                      color: '#d97757',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: '0.9rem'

@@ -1,5 +1,5 @@
 export default function Supplements({ data }) {
-  const colors = ['#e94560', '#ffaa00', '#00d68f', '#5dade2'];
+  const colors = ['#d97757', '#d4943a', '#4a9d6e', '#4a7ab5'];
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function Supplements({ data }) {
             <div style={{ marginBottom: 8 }}>
               <span className="tag tag-blue">Dosage : {item.dosage}</span>
             </div>
-            <p style={{ color: '#a0a0b8', fontSize: '0.9rem' }}>{item.utility}</p>
+            <p style={{ color: '#5c5c5c', fontSize: '0.9rem' }}>{item.utility}</p>
           </div>
         ))}
       </div>

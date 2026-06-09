@@ -1,5 +1,5 @@
 export default function Nutrition({ data }) {
-  const colors = ['#e94560', '#ffaa00', '#00d68f', '#5dade2', '#a78bfa', '#ff6b81'];
+  const colors = ['#d97757', '#d4943a', '#4a9d6e', '#4a7ab5', '#7c6abf', '#d97757'];
 
   return (
     <>

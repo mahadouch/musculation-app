@@ -25,7 +25,7 @@ export default function Recovery({ data }) {
                 <tr key={i}>
                   <td style={{ fontWeight: 600 }}>{item.param}</td>
                   <td><span className="tag tag-green">{item.value}</span></td>
-                  <td style={{ color: '#a0a0b8', fontSize: '0.85rem' }}>{item.reason}</td>
+                  <td style={{ color: '#5c5c5c', fontSize: '0.85rem' }}>{item.reason}</td>
                 </tr>
               ))}
             </tbody>
@@ -53,7 +53,7 @@ export default function Recovery({ data }) {
                 <tr key={i}>
                   <td style={{ fontWeight: 600 }}>{item.moment}</td>
                   <td><span className="tag tag-blue">{item.quantity}</span></td>
-                  <td style={{ color: '#a0a0b8', fontSize: '0.85rem' }}>{item.advice}</td>
+                  <td style={{ color: '#5c5c5c', fontSize: '0.85rem' }}>{item.advice}</td>
                 </tr>
               ))}
             </tbody>
@@ -81,7 +81,7 @@ export default function Recovery({ data }) {
                 <tr key={i}>
                   <td style={{ fontWeight: 600 }}>{item.exercise}</td>
                   <td><span className="tag tag-yellow">{item.duration}</span></td>
-                  <td style={{ color: '#a0a0b8' }}>{item.muscles}</td>
+                  <td style={{ color: '#5c5c5c' }}>{item.muscles}</td>
                 </tr>
               ))}
             </tbody>
@@ -95,7 +95,7 @@ export default function Recovery({ data }) {
           <span className="emoji">⚠️</span>
           <h3>Signes de surcharge</h3>
         </div>
-        <p style={{ color: '#a0a0b8', marginBottom: 12, fontSize: '0.9rem' }}>
+        <p style={{ color: '#5c5c5c', marginBottom: 12, fontSize: '0.9rem' }}>
           Si tu ressens ces signes, prends 1-2 jours de repos supplémentaires :
         </p>
         <div className="table-container">
@@ -114,7 +114,7 @@ export default function Recovery({ data }) {
             </tbody>
           </table>
         </div>
-        <p style={{ marginTop: 15, color: '#ffaa00', fontSize: '0.9rem', fontWeight: 600 }}>
+        <p style={{ marginTop: 15, color: '#d4943a', fontSize: '0.9rem', fontWeight: 600 }}>
           💡 Mieux vaut 1 jour de trop de repos qu'une blessure qui te met 3 semaines de côté !
         </p>
       </div>

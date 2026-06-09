@@ -1,10 +1,10 @@
 export default function Objectives({ data }) {
   const items = [
-    { label: 'Prise de poids', value: data.prise_de_poids, color: '#e94560', percent: 30 },
-    { label: 'Calories', value: data.calories, color: '#ff6b81', percent: 80 },
-    { label: 'Protéines', value: data.proteines, color: '#00d68f', percent: 60 },
-    { label: 'Glucides', value: data.glucides, color: '#ffaa00', percent: 90 },
-    { label: 'Lipides', value: data.lipides, color: '#5dade2', percent: 25 },
+    { label: 'Prise de poids', value: data.prise_de_poids, color: '#d97757', percent: 30 },
+    { label: 'Calories', value: data.calories, color: '#d97757', percent: 80 },
+    { label: 'Protéines', value: data.proteines, color: '#4a9d6e', percent: 60 },
+    { label: 'Glucides', value: data.glucides, color: '#d4943a', percent: 90 },
+    { label: 'Lipides', value: data.lipides, color: '#4a7ab5', percent: 25 },
   ];
 
   return (

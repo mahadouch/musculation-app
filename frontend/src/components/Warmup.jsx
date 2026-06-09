@@ -59,7 +59,7 @@ export default function Warmup({ data }) {
                   <tr key={i}>
                     <td style={{ fontWeight: 600 }}>{item.exercise}</td>
                     <td><span className="tag tag-blue">{item.duration}</span></td>
-                    <td style={{ color: '#a0a0b8' }}>{item.description}</td>
+                    <td style={{ color: '#5c5c5c' }}>{item.description}</td>
                   </tr>
                 ))}
               </tbody>
@@ -89,7 +89,7 @@ export default function Warmup({ data }) {
                     <td style={{ fontWeight: 600 }}>{item.exercise}</td>
                     <td><span className="tag tag-red">{item.series}</span></td>
                     <td><span className="tag tag-green">{item.reps}</span></td>
-                    <td style={{ color: '#a0a0b8' }}>{item.objective}</td>
+                    <td style={{ color: '#5c5c5c' }}>{item.objective}</td>
                   </tr>
                 ))}
               </tbody>
@@ -115,13 +115,13 @@ export default function Warmup({ data }) {
                   <tr key={i}>
                     <td style={{ fontWeight: 600 }}>{item.minute}</td>
                     <td><span className="tag tag-yellow">{item.intensity}</span></td>
-                    <td style={{ color: '#a0a0b8' }}>{item.description}</td>
+                    <td style={{ color: '#5c5c5c' }}>{item.description}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p style={{ marginTop: 15, color: '#ffaa00', fontSize: '0.9rem' }}>
+          <p style={{ marginTop: 15, color: '#d4943a', fontSize: '0.9rem' }}>
             ⚠️ Règle d'or : L'échauffement ne doit PAS te fatiguer. Tu dois ressentir une légère chaleur, pas l'épuisement.
           </p>
         </div>

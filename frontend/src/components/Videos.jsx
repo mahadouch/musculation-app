@@ -100,7 +100,7 @@ export default function Videos({ data }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      color: '#ff6b81',
+                      color: '#d97757',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: '0.9rem'
@@ -157,7 +157,7 @@ export default function Videos({ data }) {
                 href={data.warmup}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#ff6b81', textDecoration: 'none', fontWeight: 600 }}
+                style={{ color: '#d97757', textDecoration: 'none', fontWeight: 600 }}
               >
                 🎥 Warm Up Before Working Out — ATHLEAN-X™
               </a>
@@ -208,7 +208,7 @@ export default function Videos({ data }) {
                 href={data.stretching}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#ff6b81', textDecoration: 'none', fontWeight: 600 }}
+                style={{ color: '#d97757', textDecoration: 'none', fontWeight: 600 }}
               >
                 🎥 Post Workout Stretch Routine — THENX
               </a>

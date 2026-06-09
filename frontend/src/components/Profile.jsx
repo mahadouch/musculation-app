@@ -21,7 +21,7 @@ export default function Profile({ data }) {
               <span className="emoji">{item.emoji}</span>
               <h3>{item.label}</h3>
             </div>
-            <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#ff6b81' }}>
+            <p style={{ fontSize: '1.2rem', fontWeight: 600, color: '#d97757' }}>
               {item.value}
             </p>
           </div>
