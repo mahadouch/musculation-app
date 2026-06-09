@@ -9,6 +9,10 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
+// Servir le frontend buildé
+const FRONTEND_BUILD = path.join(__dirname, '..', 'frontend', 'dist');
+app.use(express.static(FRONTEND_BUILD));
+
 // Ouvrir la base SQLite
 const DB_PATH = process.env.DB_PATH || path.join(__dirname, '..', 'musculation.db');
 const db = new Database(DB_PATH);
@@ -346,6 +350,13 @@ app.delete('/api/tracking/entries/:id', (req, res) => {
     console.error('Erreur DELETE tracking:', err.message);
     res.status(500).json({ error: 'Erreur serveur' });
   }
+});
+
+// ============================================================
+// SPA FALLBACK — servir index.html pour toutes les routes non-API
+// ============================================================
+app.get('/{*splat}', (req, res) => {
+  res.sendFile(path.join(FRONTEND_BUILD, 'index.html'));
 });
 
 // ============================================================
